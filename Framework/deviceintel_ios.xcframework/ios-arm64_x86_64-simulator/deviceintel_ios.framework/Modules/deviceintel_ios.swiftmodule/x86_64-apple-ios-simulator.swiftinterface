@@ -1,0 +1,253 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name deviceintel_ios
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AdSupport
+import AppTrackingTransparency
+import CallKit
+import SystemConfiguration.CaptiveNetwork
+import CommonCrypto
+import CoreGraphics
+import CoreLocation
+import CryptoKit
+import Darwin
+import Foundation
+import JavaScriptCore
+import LocalAuthentication
+import MachO
+import MessageUI
+import Network
+import ObjectiveC
+import Swift
+import SwiftUI
+import SystemConfiguration
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
+public class BureauSecurityLib {
+  public static func amIJailbroken() -> Swift.Bool
+  public static func amIRunInEmulator() -> Swift.Bool
+  public static func amIJailbrokenWithFailMessage() -> (jailbroken: Swift.Bool, failMessage: Swift.String)
+  public static func amIJailbrokenWithFailedChecks() -> (jailbroken: Swift.Bool, failedChecks: [deviceintel_ios.FailedCheckType])
+  public static func amIReverseEngineered() -> Swift.Bool
+  public static func amIReverseEngineeredWithFailedChecks() -> (reverseEngineered: Swift.Bool, failedChecks: [deviceintel_ios.FailedCheckType])
+  @available(*, deprecated, renamed: "amIRuntimeHooked(dyldAllowList:detectionClass:selector:isClassMethod:)")
+  public static func amIRuntimeHooked(dyldWhiteList: [Swift.String], detectionClass: Swift.AnyClass, selector: ObjectiveC.Selector, isClassMethod: Swift.Bool) -> Swift.Bool
+  public static func amIRuntimeHooked(dyldAllowList: [Swift.String], detectionClass: Swift.AnyClass, selector: ObjectiveC.Selector, isClassMethod: Swift.Bool) -> Swift.Bool
+  @objc deinit
+}
+public protocol DeviceInfoProviding {
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 13.0, tvOS 13.0, *)
+  func getDeviceInfo() async -> deviceintel_ios.DeviceInfo
+  #endif
+  func getDeviceInfo(_ completion: @escaping (deviceintel_ios.DeviceInfo) -> Swift.Void)
+}
+@_hasMissingDesignatedInitializers public class DeviceInfoProvider {
+  convenience public init()
+  @objc deinit
+}
+extension deviceintel_ios.DeviceInfoProvider : deviceintel_ios.DeviceInfoProviding {
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 13.0, tvOS 13.0, *)
+  public func getDeviceInfo() async -> deviceintel_ios.DeviceInfo
+  #endif
+  public func getDeviceInfo(_ completion: @escaping (deviceintel_ios.DeviceInfo) -> Swift.Void)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BureauAPI : ObjectiveC.NSObject {
+  public var delegate: UIKit.UIViewController?
+  public var fingerprintDelegate: (any deviceintel_ios.PrismFingerPrintDelegate)?
+  public var localSignalDelegate: (any deviceintel_ios.LocalSignalDelegate)?
+  @objc public static let shared: deviceintel_ios.BureauAPI
+  public func configure(clientID: Swift.String, environment: deviceintel_ios.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", enableBehavioralBiometrics: Swift.Bool = false)
+  public func setUserID(_ userId: Swift.String)
+  public func setCustomUrl(_ customUrl: Swift.String)
+  public func setFlow(_ flow: Swift.String)
+  @objc public func submit(completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @objc deinit
+}
+extension deviceintel_ios.BureauAPI : CoreLocation.CLLocationManagerDelegate {
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+}
+public struct CredentialBuilder {
+}
+public enum Mode {
+  case sandbox
+  case production
+  case stage
+  public static func == (a: deviceintel_ios.Mode, b: deviceintel_ios.Mode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol PrismFingerPrintDelegate : ObjectiveC.NSObject {
+  func onFinished(data: [Swift.String : Any]?)
+}
+public protocol LocalSignalDelegate : AnyObject {
+  func deviceLocation(isMocked: Swift.Bool)
+  func device(isJailBreak: Swift.Bool)
+  func appDebugMode(enable: Swift.Bool)
+  func isVPNEnable(enable: Swift.Bool)
+  func voiceCall(isDetected: Swift.Bool)
+}
+extension deviceintel_ios.LocalSignalDelegate {
+  public func deviceLocation(isMocked: Swift.Bool)
+  public func device(isJailBreak: Swift.Bool)
+  public func appDebugMode(enable: Swift.Bool)
+  public func isVPNEnable(enable: Swift.Bool)
+  public func voiceCall(isDetected: Swift.Bool)
+}
+extension deviceintel_ios.BureauAPI {
+  public func localRiskSignalMonitoring(frequency: deviceintel_ios.LocalRiskSignalFrequesncy, interval: Foundation.TimeInterval = 5)
+  public func stopRiskSignalMonitoringImmediately()
+  public func setLocalRiskSignalMonitoringFrequesncy(interval: Foundation.TimeInterval = 5)
+  public func startMonitoringRiskSignals()
+  public func setLocalRiskSignalMonitoringFrequesncy(sec: Foundation.TimeInterval)
+}
+extension deviceintel_ios.BureauAPI {
+  public func isSDKInitializationSuccess() -> Swift.Bool
+  public func resetSDKInitialization()
+}
+public enum FingerprintJSVersion {
+  case v1
+  case v2
+  public static func == (a: deviceintel_ios.FingerprintJSVersion, b: deviceintel_ios.FingerprintJSVersion) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum FingerprintAlgorithm {
+  case sha256
+  public static func == (a: deviceintel_ios.FingerprintAlgorithm, b: deviceintel_ios.FingerprintAlgorithm) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Configuration {
+  public init(version: deviceintel_ios.FingerprintJSVersion = .v2, algorithm: deviceintel_ios.FingerprintAlgorithm = .sha256)
+}
+public typealias FailedCheckType = (check: deviceintel_ios.FailedCheck, failMessage: Swift.String)
+public enum FailedCheck : Swift.CaseIterable {
+  case urlSchemes
+  case existenceOfSuspiciousFiles
+  case suspiciousFilesCanBeOpened
+  case restrictedDirectoriesWriteable
+  case fork
+  case symbolicLinks
+  case dyld
+  case openedPorts
+  case pSelectFlag
+  case suspiciousObjCClasses
+  public static func == (a: deviceintel_ios.FailedCheck, b: deviceintel_ios.FailedCheck) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [deviceintel_ios.FailedCheck]
+  public static var allCases: [deviceintel_ios.FailedCheck] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol FingerprintFunction {
+  func fingerprint(data: Foundation.Data) -> Swift.String
+}
+@_hasMissingDesignatedInitializers public class Fingerprinter {
+  @objc deinit
+}
+extension deviceintel_ios.Fingerprinter {
+  public func getDeviceId(_ completion: @escaping (Swift.String?) -> Swift.Void)
+  public func getFingerprint(_ completion: @escaping (Swift.String?) -> Swift.Void)
+  public func getFingerprintTree(_ completion: @escaping (deviceintel_ios.FingerprintTree) -> Swift.Void)
+}
+@available(iOS 13.0, tvOS 13.0, *)
+extension deviceintel_ios.Fingerprinter {
+  #if compiler(>=5.3) && $AsyncAwait
+  public func getDeviceId() async -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func getFingerprintTree() async -> deviceintel_ios.FingerprintTree
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  public func getFingerprint() async -> Swift.String?
+  #endif
+}
+public protocol FingerprinterInstanceProviding {
+  static func getInstance(_ configuration: deviceintel_ios.Configuration) -> deviceintel_ios.Fingerprinter
+}
+@_hasMissingDesignatedInitializers public class FingerprinterFactory : deviceintel_ios.FingerprinterInstanceProviding {
+  public static func getInstance(_ configuration: deviceintel_ios.Configuration = Configuration()) -> deviceintel_ios.Fingerprinter
+  @objc deinit
+}
+public struct DeviceInfo {
+  public let vendorIdentifier: Foundation.UUID?
+  public let diskSpace: deviceintel_ios.DiskSpaceInfo?
+  public let screenResolution: CoreFoundation.CGSize?
+  public let deviceType: Swift.String?
+  public let deviceModel: Swift.String?
+  public let memorySize: Swift.String?
+  public let physicalMemory: Swift.String?
+  public let cpuCount: Swift.String?
+  public let osVersion: Swift.String?
+  public let osType: Swift.String?
+  public let osRelease: Swift.String?
+  public let kernelVersion: Swift.String?
+  public let batteryCapacity: Swift.String?
+  public let batteryHealth: Swift.String?
+  public let isCharging: Swift.Bool?
+  public let ipv4: Swift.String?
+  public let ipv6: Swift.String?
+  public let isVpnConnected: Swift.String?
+  public let wifiMacAddress: Swift.String?
+  public let networkType: Swift.String?
+}
+public struct DiskSpaceInfo {
+  public let freeDiskSpace: Swift.UInt64
+  public let totalDiskSpace: Swift.UInt64
+}
+public enum LocalRiskSignalFrequesncy {
+  case instant
+  case continuous
+  public static func == (a: deviceintel_ios.LocalRiskSignalFrequesncy, b: deviceintel_ios.LocalRiskSignalFrequesncy) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct FingerprintTree {
+  public let info: deviceintel_ios.DeviceInfoItem
+  public let children: [deviceintel_ios.FingerprintTree]?
+  public var fingerprint: Swift.String {
+    get
+  }
+}
+public enum DeviceInfoValueType {
+  case category
+  case info(Swift.String)
+}
+public struct DeviceInfoItem {
+  public let label: Swift.String
+  public let value: deviceintel_ios.DeviceInfoValueType
+  public let children: [deviceintel_ios.DeviceInfoItem]?
+}
+extension CoreFoundation.CGSize : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension deviceintel_ios.Mode : Swift.Equatable {}
+extension deviceintel_ios.Mode : Swift.Hashable {}
+extension deviceintel_ios.FingerprintJSVersion : Swift.Equatable {}
+extension deviceintel_ios.FingerprintJSVersion : Swift.Hashable {}
+extension deviceintel_ios.FingerprintAlgorithm : Swift.Equatable {}
+extension deviceintel_ios.FingerprintAlgorithm : Swift.Hashable {}
+extension deviceintel_ios.FailedCheck : Swift.Equatable {}
+extension deviceintel_ios.FailedCheck : Swift.Hashable {}
+extension deviceintel_ios.LocalRiskSignalFrequesncy : Swift.Equatable {}
+extension deviceintel_ios.LocalRiskSignalFrequesncy : Swift.Hashable {}

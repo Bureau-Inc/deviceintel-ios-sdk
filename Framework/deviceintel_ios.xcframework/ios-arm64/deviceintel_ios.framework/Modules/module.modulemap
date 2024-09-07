@@ -1,0 +1,4 @@
+framework module deviceintel_ios {
+  header "deviceintel_ios-Swift.h"
+  requires objc
+}
