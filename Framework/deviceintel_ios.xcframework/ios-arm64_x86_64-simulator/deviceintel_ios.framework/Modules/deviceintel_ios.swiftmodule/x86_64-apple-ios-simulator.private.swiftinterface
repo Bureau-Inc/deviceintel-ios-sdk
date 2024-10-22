@@ -19,6 +19,7 @@ import MachO
 import MessageUI
 import Network
 import ObjectiveC
+import Security
 import Swift
 import SwiftUI
 import SystemConfiguration
@@ -63,7 +64,7 @@ extension deviceintel_ios.DeviceInfoProvider : deviceintel_ios.DeviceInfoProvidi
   public var fingerprintDelegate: (any deviceintel_ios.PrismFingerPrintDelegate)?
   public var localSignalDelegate: (any deviceintel_ios.LocalSignalDelegate)?
   @objc public static let shared: deviceintel_ios.BureauAPI
-  public func configure(clientID: Swift.String, environment: deviceintel_ios.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", enableBehavioralBiometrics: Swift.Bool = false)
+  public func configure(clientID: Swift.String, environment: deviceintel_ios.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", enableBehavioralBiometrics: Swift.Bool = false, enableDebugLog: Swift.Bool = false)
   public func setUserID(_ userId: Swift.String)
   public func setCustomUrl(_ customUrl: Swift.String)
   public func setFlow(_ flow: Swift.String)
@@ -220,6 +221,25 @@ public enum LocalRiskSignalFrequesncy {
     get
   }
 }
+public protocol BehavioralBiometricsHelper {
+  func getSessionId() -> Swift.String
+}
+@_hasMissingDesignatedInitializers public class DebugLogger {
+  public static let shared: deviceintel_ios.DebugLogger
+  public var isLoggingEnabled: Swift.Bool
+  public func log(_ message: Swift.String, logLevel: deviceintel_ios.DebugLogger.LogLevel = .info)
+  public enum LogLevel : Swift.String {
+    case info
+    case warning
+    case error
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+}
 public struct FingerprintTree {
   public let info: deviceintel_ios.DeviceInfoItem
   public let children: [deviceintel_ios.FingerprintTree]?
@@ -251,3 +271,6 @@ extension deviceintel_ios.FailedCheck : Swift.Equatable {}
 extension deviceintel_ios.FailedCheck : Swift.Hashable {}
 extension deviceintel_ios.LocalRiskSignalFrequesncy : Swift.Equatable {}
 extension deviceintel_ios.LocalRiskSignalFrequesncy : Swift.Hashable {}
+extension deviceintel_ios.DebugLogger.LogLevel : Swift.Equatable {}
+extension deviceintel_ios.DebugLogger.LogLevel : Swift.Hashable {}
+extension deviceintel_ios.DebugLogger.LogLevel : Swift.RawRepresentable {}
