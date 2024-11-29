@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name deviceintel_ios
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name deviceintel_ios
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
 import AdSupport
 import AppTrackingTransparency
@@ -49,10 +49,8 @@ extension deviceintel_ios.BureauSecurityLib {
   public static func denySymbolHook(_ symbol: Swift.String, at image: Swift.UnsafePointer<MachO.mach_header>, imageSlide slide: Swift.Int)
 }
 public protocol DeviceInfoProviding {
-  #if compiler(>=5.3) && $AsyncAwait
   @available(iOS 13.0, tvOS 13.0, *)
   func getDeviceInfo() async -> deviceintel_ios.DeviceInfo
-  #endif
   func getDeviceInfo(_ completion: @escaping (deviceintel_ios.DeviceInfo) -> Swift.Void)
 }
 @_hasMissingDesignatedInitializers public class DeviceInfoProvider {
@@ -60,10 +58,8 @@ public protocol DeviceInfoProviding {
   @objc deinit
 }
 extension deviceintel_ios.DeviceInfoProvider : deviceintel_ios.DeviceInfoProviding {
-  #if compiler(>=5.3) && $AsyncAwait
   @available(iOS 13.0, tvOS 13.0, *)
   public func getDeviceInfo() async -> deviceintel_ios.DeviceInfo
-  #endif
   public func getDeviceInfo(_ completion: @escaping (deviceintel_ios.DeviceInfo) -> Swift.Void)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BureauAPI : ObjectiveC.NSObject {
@@ -156,7 +152,7 @@ public enum FailedCheck : Swift.CaseIterable {
   public static func == (a: deviceintel_ios.FailedCheck, b: deviceintel_ios.FailedCheck) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public typealias AllCases = [deviceintel_ios.FailedCheck]
-  public static var allCases: [deviceintel_ios.FailedCheck] {
+  nonisolated public static var allCases: [deviceintel_ios.FailedCheck] {
     get
   }
   public var hashValue: Swift.Int {
@@ -176,15 +172,9 @@ extension deviceintel_ios.Fingerprinter {
 }
 @available(iOS 13.0, tvOS 13.0, *)
 extension deviceintel_ios.Fingerprinter {
-  #if compiler(>=5.3) && $AsyncAwait
   public func getDeviceId() async -> Swift.String?
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   public func getFingerprintTree() async -> deviceintel_ios.FingerprintTree
-  #endif
-  #if compiler(>=5.3) && $AsyncAwait
   public func getFingerprint() async -> Swift.String?
-  #endif
 }
 public protocol FingerprinterInstanceProviding {
   static func getInstance(_ configuration: deviceintel_ios.Configuration) -> deviceintel_ios.Fingerprinter
