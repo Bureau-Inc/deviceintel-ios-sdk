@@ -311,7 +311,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BureauAPI * 
 + (BureauAPI * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)submitWithCompletion:(void (^ _Nullable)(BOOL))completion;
 @end
 
 @class CLLocationManager;
