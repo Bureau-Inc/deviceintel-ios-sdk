@@ -36,9 +36,6 @@ public class BureauSecurityLib {
   public static func amIJailbrokenWithFailedChecks() -> (jailbroken: Swift.Bool, failedChecks: [deviceintel_ios.FailedCheckType])
   public static func amIReverseEngineered() -> Swift.Bool
   public static func amIReverseEngineeredWithFailedChecks() -> (reverseEngineered: Swift.Bool, failedChecks: [deviceintel_ios.FailedCheckType])
-  @available(*, deprecated, renamed: "amIRuntimeHooked(dyldAllowList:detectionClass:selector:isClassMethod:)")
-  public static func amIRuntimeHooked(dyldWhiteList: [Swift.String], detectionClass: Swift.AnyClass, selector: ObjectiveC.Selector, isClassMethod: Swift.Bool) -> Swift.Bool
-  public static func amIRuntimeHooked(dyldAllowList: [Swift.String], detectionClass: Swift.AnyClass, selector: ObjectiveC.Selector, isClassMethod: Swift.Bool) -> Swift.Bool
   @objc deinit
 }
 public protocol DeviceInfoProviding {
@@ -59,12 +56,13 @@ extension deviceintel_ios.DeviceInfoProvider : deviceintel_ios.DeviceInfoProvidi
   public var delegate: UIKit.UIViewController?
   public var fingerprintDelegate: (any deviceintel_ios.PrismFingerPrintDelegate)?
   public var localSignalDelegate: (any deviceintel_ios.LocalSignalDelegate)?
+  public var utilityDelegate: (any deviceintel_ios.UtilityDelegate)?
   @objc public static let shared: deviceintel_ios.BureauAPI
-  public func configure(clientID: Swift.String, environment: deviceintel_ios.Mode, sessionID: Swift.String, userId: Swift.String = "", flow: Swift.String = "", enableBehavioralBiometrics: Swift.Bool = false, enableDebugLog: Swift.Bool = false)
+  public func configure(config: deviceintel_ios.BureauConfig)
   public func setUserID(_ userId: Swift.String)
   public func setCustomUrl(_ customUrl: Swift.String)
   public func setFlow(_ flow: Swift.String)
-  @objc public func submit(completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  public func submit(onCompletion: ((Swift.Bool, deviceintel_ios.BureauError?) -> Swift.Void)? = nil)
   @objc deinit
 }
 extension deviceintel_ios.BureauAPI : CoreLocation.CLLocationManagerDelegate {
@@ -72,11 +70,10 @@ extension deviceintel_ios.BureauAPI : CoreLocation.CLLocationManagerDelegate {
 }
 public struct CredentialBuilder {
 }
-public enum Mode {
-  case sandbox
+public enum Environment {
   case production
   case stage
-  public static func == (a: deviceintel_ios.Mode, b: deviceintel_ios.Mode) -> Swift.Bool
+  public static func == (a: deviceintel_ios.Environment, b: deviceintel_ios.Environment) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -99,9 +96,12 @@ extension deviceintel_ios.LocalSignalDelegate {
   public func isVPNEnable(enable: Swift.Bool)
   public func voiceCall(isDetected: Swift.Bool)
 }
+public protocol UtilityDelegate : AnyObject {
+  func getPayload(payload: Foundation.NSDictionary)
+}
 extension deviceintel_ios.BureauAPI {
-  public func localRiskSignalMonitoring(frequency: deviceintel_ios.LocalRiskSignalFrequesncy, interval: Foundation.TimeInterval = 5)
-  public func stopRiskSignalMonitoringImmediately()
+  public func enableRiskMonitoring(frequency: deviceintel_ios.LocalRiskSignalFrequesncy, interval: Foundation.TimeInterval = 5)
+  public func disableRiskMonitoring()
   public func setLocalRiskSignalMonitoringFrequesncy(interval: Foundation.TimeInterval = 5)
   public func startMonitoringRiskSignals()
   public func setLocalRiskSignalMonitoringFrequesncy(sec: Foundation.TimeInterval)
@@ -230,6 +230,18 @@ public protocol BehavioralBiometricsHelper {
   }
   @objc deinit
 }
+public enum BureauError : Swift.Error {
+  case eventIDEmpty
+  case eaKeysEmpty
+  case httpException
+  case networkError
+  case unknown(statusCode: Swift.Int)
+}
+extension deviceintel_ios.BureauError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 public struct FingerprintTree {
   public let info: deviceintel_ios.DeviceInfoItem
   public let children: [deviceintel_ios.FingerprintTree]?
@@ -251,8 +263,11 @@ extension CoreFoundation.CGSize : Swift.CustomStringConvertible {
     get
   }
 }
-extension deviceintel_ios.Mode : Swift.Equatable {}
-extension deviceintel_ios.Mode : Swift.Hashable {}
+public struct BureauConfig {
+  public init(credentialID: Swift.String, eventId: Swift.String, environment: deviceintel_ios.Environment, enableBehavioralBiometrics: Swift.Bool = false, userId: Swift.String = "", flow: Swift.String = "", enableDebugLog: Swift.Bool = false)
+}
+extension deviceintel_ios.Environment : Swift.Equatable {}
+extension deviceintel_ios.Environment : Swift.Hashable {}
 extension deviceintel_ios.FingerprintJSVersion : Swift.Equatable {}
 extension deviceintel_ios.FingerprintJSVersion : Swift.Hashable {}
 extension deviceintel_ios.FingerprintAlgorithm : Swift.Equatable {}

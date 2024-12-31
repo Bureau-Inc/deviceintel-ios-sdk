@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'deviceintel-ios'
-  spec.version          = '1.0.3'
+  spec.version          = '1.0.4'
   
   spec.summary          = 'Identify and prevent fraudulent activity accurately and immediately.'
   spec.description      = 'Device Fingerprinting helps you understand your user’s unique harware with their device data & processes them in backend to generate a fingerprint id.'
