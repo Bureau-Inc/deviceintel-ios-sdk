@@ -10,6 +10,8 @@ import SystemConfiguration.CaptiveNetwork
 import CommonCrypto
 import CoreGraphics
 import CoreLocation
+import CoreMotion
+import CoreTelephony
 import CryptoKit
 import Darwin
 import Foundation
@@ -57,11 +59,13 @@ extension deviceintel_ios.DeviceInfoProvider : deviceintel_ios.DeviceInfoProvidi
   public var fingerprintDelegate: (any deviceintel_ios.PrismFingerPrintDelegate)?
   public var localSignalDelegate: (any deviceintel_ios.LocalSignalDelegate)?
   public var utilityDelegate: (any deviceintel_ios.UtilityDelegate)?
+  public var behavioralAnalyticsDelegate: (any deviceintel_ios.BehavioralAnalyticsDelegate)?
   @objc public static let shared: deviceintel_ios.BureauAPI
   public func configure(config: deviceintel_ios.BureauConfig)
   public func setUserID(_ userId: Swift.String)
   public func setCustomUrl(_ customUrl: Swift.String)
   public func setFlow(_ flow: Swift.String)
+  public func getBehaviouralAnalytics(_ duration: Swift.Int, _ userId: Swift.String, attributes: [Swift.String : Any]? = nil)
   public func submit(onCompletion: ((Swift.Bool, deviceintel_ios.BureauError?) -> Swift.Void)? = nil)
   @objc deinit
 }
@@ -98,6 +102,9 @@ extension deviceintel_ios.LocalSignalDelegate {
 }
 public protocol UtilityDelegate : AnyObject {
   func getPayload(payload: Foundation.NSDictionary)
+}
+public protocol BehavioralAnalyticsDelegate : AnyObject {
+  func didCompleteBehaviouralAnalytics(analyticsData: Foundation.NSDictionary)
 }
 extension deviceintel_ios.BureauAPI {
   public func enableRiskMonitoring(frequency: deviceintel_ios.LocalRiskSignalFrequesncy, interval: Foundation.TimeInterval = 5)
@@ -249,6 +256,19 @@ public struct FingerprintTree {
     get
   }
 }
+public struct AnalyticsPayload {
+}
+@_hasMissingDesignatedInitializers public class MotionManager {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class BehavioralAnalyticsTracker : ObjectiveC.NSObject, UIKit.UIScrollViewDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init()
+  @objc deinit
+}
+extension deviceintel_ios.BehavioralAnalyticsTracker : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
 public enum DeviceInfoValueType {
   case category
   case info(Swift.String)
@@ -279,3 +299,4 @@ extension deviceintel_ios.LocalRiskSignalFrequesncy : Swift.Hashable {}
 extension deviceintel_ios.DebugLogger.LogLevel : Swift.Equatable {}
 extension deviceintel_ios.DebugLogger.LogLevel : Swift.Hashable {}
 extension deviceintel_ios.DebugLogger.LogLevel : Swift.RawRepresentable {}
+extension deviceintel_ios.BehavioralAnalyticsTracker : Swift.Sendable {}
