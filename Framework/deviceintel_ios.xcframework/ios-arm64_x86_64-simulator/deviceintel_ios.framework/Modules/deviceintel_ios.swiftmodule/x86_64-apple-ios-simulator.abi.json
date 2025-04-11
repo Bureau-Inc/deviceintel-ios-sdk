@@ -1464,12 +1464,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "((Swift.Bool, deviceintel_ios.BureauError?) -> ())?",
+                "printedName": "((Swift.Bool, Swift.String, deviceintel_ios.BureauError?) -> ())?",
                 "children": [
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(Swift.Bool, deviceintel_ios.BureauError?) -> ()",
+                    "printedName": "(Swift.Bool, Swift.String, deviceintel_ios.BureauError?) -> ()",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -1479,13 +1479,19 @@
                       {
                         "kind": "TypeNominal",
                         "name": "Tuple",
-                        "printedName": "(Swift.Bool, deviceintel_ios.BureauError?)",
+                        "printedName": "(Swift.Bool, Swift.String, deviceintel_ios.BureauError?)",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "Bool",
                             "printedName": "Swift.Bool",
                             "usr": "s:Sb"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
                           },
                           {
                             "kind": "TypeNominal",
@@ -1511,8 +1517,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:15deviceintel_ios9BureauAPIC6submit12onCompletionyySb_AA0C5ErrorOSgtcSg_tF",
-            "mangledName": "$s15deviceintel_ios9BureauAPIC6submit12onCompletionyySb_AA0C5ErrorOSgtcSg_tF",
+            "usr": "s:15deviceintel_ios9BureauAPIC6submit12onCompletionyySb_SSAA0C5ErrorOSgtcSg_tF",
+            "mangledName": "$s15deviceintel_ios9BureauAPIC6submit12onCompletionyySb_SSAA0C5ErrorOSgtcSg_tF",
             "moduleName": "deviceintel_ios",
             "declAttributes": [
               "AccessControl"
@@ -1847,43 +1853,6 @@
         "children": [
           {
             "kind": "Var",
-            "name": "production",
-            "printedName": "production",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(deviceintel_ios.Environment.Type) -> deviceintel_ios.Environment",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Environment",
-                    "printedName": "deviceintel_ios.Environment",
-                    "usr": "s:15deviceintel_ios11EnvironmentO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "deviceintel_ios.Environment.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Environment",
-                        "printedName": "deviceintel_ios.Environment",
-                        "usr": "s:15deviceintel_ios11EnvironmentO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:15deviceintel_ios11EnvironmentO10productionyA2CmF",
-            "mangledName": "$s15deviceintel_ios11EnvironmentO10productionyA2CmF",
-            "moduleName": "deviceintel_ios"
-          },
-          {
-            "kind": "Var",
             "name": "stage",
             "printedName": "stage",
             "children": [
@@ -1917,6 +1886,43 @@
             "declKind": "EnumElement",
             "usr": "s:15deviceintel_ios11EnvironmentO5stageyA2CmF",
             "mangledName": "$s15deviceintel_ios11EnvironmentO5stageyA2CmF",
+            "moduleName": "deviceintel_ios"
+          },
+          {
+            "kind": "Var",
+            "name": "production",
+            "printedName": "production",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(deviceintel_ios.Environment.Type) -> deviceintel_ios.Environment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Environment",
+                    "printedName": "deviceintel_ios.Environment",
+                    "usr": "s:15deviceintel_ios11EnvironmentO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "deviceintel_ios.Environment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Environment",
+                        "printedName": "deviceintel_ios.Environment",
+                        "usr": "s:15deviceintel_ios11EnvironmentO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15deviceintel_ios11EnvironmentO10productionyA2CmF",
+            "mangledName": "$s15deviceintel_ios11EnvironmentO10productionyA2CmF",
             "moduleName": "deviceintel_ios"
           },
           {
@@ -2062,12 +2068,26 @@
           {
             "kind": "Function",
             "name": "onFinished",
-            "printedName": "onFinished(data:)",
+            "printedName": "onFinished(eventID:data:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -2098,8 +2118,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:15deviceintel_ios24PrismFingerPrintDelegateP10onFinished4dataySDySSypGSg_tF",
-            "mangledName": "$s15deviceintel_ios24PrismFingerPrintDelegateP10onFinished4dataySDySSypGSg_tF",
+            "usr": "s:15deviceintel_ios24PrismFingerPrintDelegateP10onFinished7eventID4dataySSSg_SDySSypGSgtF",
+            "mangledName": "$s15deviceintel_ios24PrismFingerPrintDelegateP10onFinished7eventID4dataySSSg_SDySSypGSgtF",
             "moduleName": "deviceintel_ios",
             "genericSig": "<τ_0_0 where τ_0_0 : deviceintel_ios.PrismFingerPrintDelegate>",
             "sugared_genericSig": "<Self where Self : deviceintel_ios.PrismFingerPrintDelegate>",
@@ -3932,6 +3952,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "deviceintel_ios",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "SwiftUI",
         "printedName": "SwiftUI",
         "declKind": "Import",
@@ -4209,6 +4239,13 @@
         "declAttributes": [
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "deviceintel_ios"
       },
       {
         "kind": "Import",
@@ -7839,6 +7876,23 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "deviceintel_ios"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "deviceintel_ios",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "MachO",
         "printedName": "MachO",
         "declKind": "Import",
@@ -7900,19 +7954,13 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(credentialID:eventId:environment:enableBehavioralBiometrics:userId:flow:enableDebugLog:)",
+            "printedName": "init(credentialID:environment:enableBehavioralBiometrics:userId:flow:enableDebugLog:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "BureauConfig",
                 "printedName": "deviceintel_ios.BureauConfig",
                 "usr": "s:15deviceintel_ios12BureauConfigV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -7956,8 +8004,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15deviceintel_ios12BureauConfigV12credentialID7eventId11environment26enableBehavioralBiometrics04userH04flow0J8DebugLogACSS_SSAA11EnvironmentOSbS2SSbtcfc",
-            "mangledName": "$s15deviceintel_ios12BureauConfigV12credentialID7eventId11environment26enableBehavioralBiometrics04userH04flow0J8DebugLogACSS_SSAA11EnvironmentOSbS2SSbtcfc",
+            "usr": "s:15deviceintel_ios12BureauConfigV12credentialID11environment26enableBehavioralBiometrics6userId4flow0H8DebugLogACSS_AA11EnvironmentOSbS2SSbtcfc",
+            "mangledName": "$s15deviceintel_ios12BureauConfigV12credentialID11environment26enableBehavioralBiometrics6userId4flow0H8DebugLogACSS_AA11EnvironmentOSbS2SSbtcfc",
             "moduleName": "deviceintel_ios",
             "declAttributes": [
               "AccessControl"
@@ -10049,56 +10097,70 @@
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 653,
+      "offset": 758,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 679,
+      "offset": 784,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 746,
+      "offset": 885,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "FloatLiteral",
-      "offset": 1155,
+      "offset": 1294,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1371,
+      "offset": 1510,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1418,
+      "offset": 1557,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1665,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 19050,
+      "offset": 1724,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
+      "kind": "IntegerLiteral",
+      "offset": 19891,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 19551,
+      "offset": 20392,
       "length": 1,
       "value": "5"
     },
@@ -10112,182 +10174,203 @@
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 212,
+      "offset": 225,
       "length": 16,
       "value": "\"SDKInitialized\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 251,
+      "offset": 264,
       "length": 28,
       "value": "\"SDKInitializationCompleted\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 304,
+      "offset": 317,
       "length": 17,
       "value": "\"SDKSubmitCalled\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 362,
+      "offset": 375,
       "length": 23,
       "value": "\"EncryptAndSendRequest\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 413,
+      "offset": 426,
       "length": 17,
       "value": "\"SetUserIDCalled\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 467,
+      "offset": 480,
       "length": 26,
       "value": "\"PayloadEncryptionStarted\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 532,
+      "offset": 545,
       "length": 28,
       "value": "\"PayloadEncryptionCompleted\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 616,
+      "offset": 629,
       "length": 9,
       "value": "\"records\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 643,
+      "offset": 656,
       "length": 7,
       "value": "\"value\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 672,
+      "offset": 685,
       "length": 11,
       "value": "\"eventName\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 704,
+      "offset": 717,
       "length": 5,
       "value": "\"key\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 732,
+      "offset": 745,
       "length": 12,
       "value": "\"properties\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 766,
+      "offset": 779,
       "length": 11,
       "value": "\"timestamp\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 816,
+      "offset": 829,
       "length": 28,
       "value": "\"enableBehavioralBiometrics\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 862,
+      "offset": 875,
       "length": 7,
       "value": "\"isDev\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 889,
+      "offset": 902,
       "length": 9,
       "value": "\"eventId\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 923,
+      "offset": 936,
       "length": 14,
       "value": "\"credentialId\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 961,
+      "offset": 974,
       "length": 13,
       "value": "\"environment\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 997,
+      "offset": 1010,
       "length": 12,
       "value": "\"sdkVersion\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 1038,
+      "offset": 1051,
       "length": 18,
       "value": "\"suspiciousSignal\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 1079,
+      "offset": 1092,
       "length": 12,
       "value": "\"deviceData\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 1110,
+      "offset": 1123,
       "length": 8,
       "value": "\"status\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
       "kind": "StringLiteral",
-      "offset": 1139,
+      "offset": 1152,
       "length": 10,
       "value": "\"platform\""
     },
     {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 1188,
+      "length": 15,
+      "value": "\"appIdentifier\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 1226,
+      "length": 11,
+      "value": "\"osVersion\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/EventLog\/EventLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 1259,
+      "length": 11,
+      "value": "\"modelName\""
+    },
+    {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Encryption.swift",
       "kind": "IntegerLiteral",
-      "offset": 7403,
+      "offset": 7534,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Encryption.swift",
       "kind": "IntegerLiteral",
-      "offset": 7408,
+      "offset": 7539,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Encryption.swift",
       "kind": "Array",
-      "offset": 7474,
+      "offset": 7605,
       "length": 2,
       "value": "[]"
     },
@@ -10338,7 +10421,7 @@
       "kind": "StringLiteral",
       "offset": 702,
       "length": 7,
-      "value": "\"1.0.5\""
+      "value": "\"2.0.0\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
@@ -10392,112 +10475,119 @@
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 4104,
+      "offset": 4068,
+      "length": 279,
+      "value": "\"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgeihrwu6Oh4ucFwCVtW9fuzAP\nDdJt1+8zOlxTqZY7AumJJjFSqbzJf0m76ZYuZfVNJpx8wiyv3LiUEAIiEQpm5P+k\nRYyBEEBXAG2w+xmY8dJy4y\/fDLIhVj3TNdCq\/Rz9tOAZN7hYCVEbBJtJLh3rqqGz\n+AvPdOBoJTfGQQVS3QIDAQAB\n-----END PUBLIC KEY-----\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
+      "kind": "StringLiteral",
+      "offset": 4416,
       "length": 33,
       "value": "\"v1\/deviceService\/deviceData\/ios\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 4173,
+      "offset": 4485,
       "length": 7,
       "value": "\"v2\/pc\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 4219,
+      "offset": 4531,
       "length": 39,
       "value": "\"v1\/deviceService\/behaviour\/subSession\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 4290,
+      "offset": 4602,
       "length": 109,
       "value": "\"wss:\/\/k69rlbfuz2.execute-api.ap-south-1.amazonaws.com\/dev?credentialId=3e8449fb-d8a0-4e38-a643-ab4bb6d8d775\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 4443,
+      "offset": 4755,
       "length": 85,
       "value": "\"https:\/\/97dab99acb22475b43a17c2b9816b39c@o1297842.ingest.sentry.io\/4506189612515328\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 5687,
+      "offset": 5999,
       "length": 23,
       "value": "\"kcUniqueIdentifierKey\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 5800,
+      "offset": 6112,
       "length": 11,
       "value": "\"kcAppGuid\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 5853,
+      "offset": 6165,
       "length": 15,
       "value": "\"kcAppGuidHash\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 5916,
+      "offset": 6228,
       "length": 12,
       "value": "\"isTampered\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 6128,
+      "offset": 6440,
       "length": 65,
       "value": "\"https:\/\/bfp.dev.bureau.id\/topics\/aws.msk.bureau.iosDeviceEvents\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 6246,
+      "offset": 6558,
       "length": 65,
       "value": "\"https:\/\/bfp.stg.bureau.id\/topics\/aws.msk.bureau.iosDeviceEvents\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 6365,
+      "offset": 6677,
       "length": 65,
       "value": "\"https:\/\/bfp.prd.bureau.id\/topics\/aws.msk.bureau.iosDeviceEvents\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 6485,
+      "offset": 6797,
       "length": 102,
       "value": "\"M2U4NDQ5ZmItZDhhMC00ZTM4LWE2NDMtYWI0YmI2ZDhkNzc1OjEwYjYwZTQyLTA3MDAtNDNhMy04NzE5LWJhNGFiNmRlZGIxZA==\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 6614,
+      "offset": 6926,
       "length": 102,
       "value": "\"MzNiNTQ0N2ItZGU2My00MTZjLTgzYTMtYjdhNTk5ZTVmYjU1OjFhZGQwMjAxLWZiODEtNDJjOS1hMzNiLTcxN2Y1ZWVkNWVmNg==\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 6743,
+      "offset": 7055,
       "length": 102,
       "value": "\"ODA5MjVhMjktN2U0Yi00N2I4LWI0ZDMtN2YyZmMyZDY5ZTU3OmEzZjEyZWFkLWI0OWEtNDdkNi05Mzg4LTRiYzkzZWM3N2RhNQ==\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 6981,
+      "offset": 7293,
       "length": 9,
       "value": "\"private\""
     },
@@ -10539,44 +10629,58 @@
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/LocalLogs\/LocalLogger.swift",
       "kind": "StringLiteral",
-      "offset": 1065,
+      "offset": 1068,
       "length": 6,
       "value": "\"INFO\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/LocalLogs\/LocalLogger.swift",
       "kind": "StringLiteral",
-      "offset": 1095,
+      "offset": 1098,
       "length": 9,
       "value": "\"WARNING\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/LocalLogs\/LocalLogger.swift",
       "kind": "StringLiteral",
-      "offset": 1126,
+      "offset": 1129,
       "length": 7,
       "value": "\"ERROR\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/LocalLogs\/LocalLogger.swift",
       "kind": "StringLiteral",
-      "offset": 1747,
+      "offset": 1750,
       "length": 5,
       "value": "\"VAR\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/LocalLogs\/LocalLogger.swift",
       "kind": "StringLiteral",
-      "offset": 1773,
+      "offset": 1776,
       "length": 5,
       "value": "\"var\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/LocalLogs\/LocalLogger.swift",
       "kind": "StringLiteral",
-      "offset": 1799,
+      "offset": 1802,
       "length": 3,
       "value": "\"\/\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/LocalLogs\/LocalLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 1860,
+      "length": 3,
+      "value": "\" \""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/LocalLogs\/LocalLogger.swift",
+      "kind": "StringLiteral",
+      "offset": 1886,
+      "length": 4,
+      "value": "\"\n\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/FingerprintJS\/Harvesters\/IPHarvester.swift",
@@ -10605,6 +10709,13 @@
       "offset": 280,
       "length": 3,
       "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BehavioralAnalytics\/MotionManager.swift",
+      "kind": "Array",
+      "offset": 333,
+      "length": 2,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BehavioralAnalytics\/BehavioralAnalyticsTracker.swift",
@@ -10677,6 +10788,34 @@
       "value": "0.0"
     },
     {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BehavioralAnalytics\/BehavioralAnalyticsTracker.swift",
+      "kind": "Array",
+      "offset": 753,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BehavioralAnalytics\/BehavioralAnalyticsTracker.swift",
+      "kind": "Array",
+      "offset": 797,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BehavioralAnalytics\/BehavioralAnalyticsTracker.swift",
+      "kind": "Array",
+      "offset": 844,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BehavioralAnalytics\/BehavioralAnalyticsTracker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 893,
+      "length": 1,
+      "value": "0"
+    },
+    {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/FingerprintJS\/Harvesters\/IdentifierHarvester.swift",
       "kind": "StringLiteral",
       "offset": 273,
@@ -10684,30 +10823,37 @@
       "value": "\"vendorIdentifier\""
     },
     {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/RiskAppDetector.swift",
+      "kind": "Dictionary",
+      "offset": 261,
+      "length": 1659,
+      "value": "[(\"AltStore\", [\"altstore\"]), (\"Scarlet\", [\"scarlet\"]), (\"AppCake\", [\"appcake\", \"appcakejapp\"]), (\"TutuApp\", [\"tutuapp\"]), (\"Panda Helper\", [\"pandafree\", \"pandavip\", \"pandahelper\"]), (\"Checkra1n\", [\"checkra1n\"]), (\"Unc0ver\", [\"unc0ver\"]), (\"Palera1n\", [\"loader\", \"palera1n\"]), (\"undecimus\", [\"undecimus\"]), (\"sileo\", [\"sileo\"]), (\"zbra\", [\"zbra\"]), (\"filza\", [\"filza\"]), (\"Chimera\", [\"chimera\"]), (\"Electra\", [\"electra\"]), (\"Odyssey\", [\"odyssey\"]), (\"Taurine\", [\"taurine\"]), (\"UTM\", [\"UTM\"]), (\"TeamViewer\", [\"teamviewer\", \"tvcontrol\", \"tvopen\", \"tvsqcustomer1\"]), (\"AirDroid\", [\"sandstudio-airdroid\"]), (\"ZohoAssist\", [\"zohoassist\"]), (\"AnyDesk\", [\"anydesk\"]), (\"Splashtop\", [\"st-personal\"]), (\"Avica\", [\"com.googleusercontent.apps.946791103989-7ac0qp32qfbc226vo64d6cic49juljbi\"]), (\"Chrome Remote Desktop\", [\"chromeremotedesktop\"]), (\"RVNC Viewer\", [\"vnc\"]), (\"Screen Mirroring\", [\"screenmirroringz\"])]"
+    },
+    {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/HookingDetect\/JailbreakChecker.swift",
       "kind": "IntegerLiteral",
-      "offset": 9737,
+      "offset": 9744,
       "length": 2,
       "value": "-2"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/HookingDetect\/JailbreakChecker.swift",
       "kind": "StringLiteral",
-      "offset": 9780,
+      "offset": 9787,
       "length": 6,
       "value": "\"fork\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/HookingDetect\/JailbreakChecker.swift",
       "kind": "IntegerLiteral",
-      "offset": 9951,
+      "offset": 9958,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/HookingDetect\/JailbreakChecker.swift",
       "kind": "IntegerLiteral",
-      "offset": 9977,
+      "offset": 9984,
       "length": 1,
       "value": "0"
     },
@@ -10735,28 +10881,28 @@
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 574,
+      "offset": 557,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauConfig.swift",
       "kind": "StringLiteral",
-      "offset": 598,
+      "offset": 581,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauConfig.swift",
       "kind": "StringLiteral",
-      "offset": 617,
+      "offset": 600,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 644,
+      "offset": 627,
       "length": 5,
       "value": "false"
     }

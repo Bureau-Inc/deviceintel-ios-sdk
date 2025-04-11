@@ -54,6 +54,7 @@ extension deviceintel_ios.DeviceInfoProvider : deviceintel_ios.DeviceInfoProvidi
   public func getDeviceInfo() async -> deviceintel_ios.DeviceInfo
   public func getDeviceInfo(_ completion: @escaping (deviceintel_ios.DeviceInfo) -> Swift.Void)
 }
+public typealias CompletionBlock = ((_ result: Swift.Bool, _ eventID: Swift.String, _ error: deviceintel_ios.BureauError?) -> Swift.Void)
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BureauAPI : ObjectiveC.NSObject {
   public var delegate: UIKit.UIViewController?
   public var fingerprintDelegate: (any deviceintel_ios.PrismFingerPrintDelegate)?
@@ -66,7 +67,7 @@ extension deviceintel_ios.DeviceInfoProvider : deviceintel_ios.DeviceInfoProvidi
   public func setCustomUrl(_ customUrl: Swift.String)
   public func setFlow(_ flow: Swift.String)
   public func getBehaviouralAnalytics(_ duration: Swift.Int, _ userId: Swift.String, attributes: [Swift.String : Any]? = nil)
-  public func submit(onCompletion: ((Swift.Bool, deviceintel_ios.BureauError?) -> Swift.Void)? = nil)
+  public func submit(onCompletion: deviceintel_ios.CompletionBlock? = nil)
   @objc deinit
 }
 extension deviceintel_ios.BureauAPI : CoreLocation.CLLocationManagerDelegate {
@@ -75,8 +76,8 @@ extension deviceintel_ios.BureauAPI : CoreLocation.CLLocationManagerDelegate {
 public struct CredentialBuilder {
 }
 public enum Environment {
-  case production
   case stage
+  case production
   public static func == (a: deviceintel_ios.Environment, b: deviceintel_ios.Environment) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -84,7 +85,7 @@ public enum Environment {
   }
 }
 public protocol PrismFingerPrintDelegate : ObjectiveC.NSObject {
-  func onFinished(data: [Swift.String : Any]?)
+  func onFinished(eventID: Swift.String?, data: [Swift.String : Any]?)
 }
 public protocol LocalSignalDelegate : AnyObject {
   func deviceLocation(isMocked: Swift.Bool)
@@ -284,7 +285,7 @@ extension CoreFoundation.CGSize : Swift.CustomStringConvertible {
   }
 }
 public struct BureauConfig {
-  public init(credentialID: Swift.String, eventId: Swift.String, environment: deviceintel_ios.Environment, enableBehavioralBiometrics: Swift.Bool = false, userId: Swift.String = "", flow: Swift.String = "", enableDebugLog: Swift.Bool = false)
+  public init(credentialID: Swift.String, environment: deviceintel_ios.Environment, enableBehavioralBiometrics: Swift.Bool = false, userId: Swift.String = "", flow: Swift.String = "", enableDebugLog: Swift.Bool = false)
 }
 extension deviceintel_ios.Environment : Swift.Equatable {}
 extension deviceintel_ios.Environment : Swift.Hashable {}
