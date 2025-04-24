@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name deviceintel_ios
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name deviceintel_ios
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
 import AVFoundation
 import AdSupport
 import AppTrackingTransparency
@@ -54,7 +54,7 @@ extension deviceintel_ios.DeviceInfoProvider : deviceintel_ios.DeviceInfoProvidi
   public func getDeviceInfo() async -> deviceintel_ios.DeviceInfo
   public func getDeviceInfo(_ completion: @escaping (deviceintel_ios.DeviceInfo) -> Swift.Void)
 }
-public typealias CompletionBlock = ((_ result: Swift.Bool, _ eventID: Swift.String, _ error: deviceintel_ios.BureauError?) -> Swift.Void)
+public typealias CompletionBlock = (_ result: Swift.Bool, _ eventID: Swift.String, _ error: deviceintel_ios.BureauError?) -> Swift.Void
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BureauAPI : ObjectiveC.NSObject {
   public var delegate: UIKit.UIViewController?
   public var fingerprintDelegate: (any deviceintel_ios.PrismFingerPrintDelegate)?
@@ -151,11 +151,11 @@ public enum FailedCheck : Swift.CaseIterable {
   case pSelectFlag
   case suspiciousObjCClasses
   public static func == (a: deviceintel_ios.FailedCheck, b: deviceintel_ios.FailedCheck) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
   public typealias AllCases = [deviceintel_ios.FailedCheck]
   nonisolated public static var allCases: [deviceintel_ios.FailedCheck] {
     get
   }
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
