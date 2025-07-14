@@ -1481,12 +1481,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "((Swift.Bool, Swift.String, deviceintel_ios.BureauError?) -> ())?",
+                "printedName": "((Swift.Bool, Swift.String, deviceintel_ios.BureauError?, deviceintel_ios.Insights?) -> ())?",
                 "children": [
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(Swift.Bool, Swift.String, deviceintel_ios.BureauError?) -> ()",
+                    "printedName": "(Swift.Bool, Swift.String, deviceintel_ios.BureauError?, deviceintel_ios.Insights?) -> ()",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -1496,7 +1496,7 @@
                       {
                         "kind": "TypeNominal",
                         "name": "Tuple",
-                        "printedName": "(Swift.Bool, Swift.String, deviceintel_ios.BureauError?)",
+                        "printedName": "(Swift.Bool, Swift.String, deviceintel_ios.BureauError?, deviceintel_ios.Insights?)",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -1523,6 +1523,20 @@
                               }
                             ],
                             "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "deviceintel_ios.Insights?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Insights",
+                                "printedName": "deviceintel_ios.Insights",
+                                "usr": "s:15deviceintel_ios8InsightsV"
+                              }
+                            ],
+                            "usr": "s:Sq"
                           }
                         ]
                       }
@@ -1534,8 +1548,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:15deviceintel_ios9BureauAPIC6submit12onCompletionyySb_SSAA0C5ErrorOSgtcSg_tF",
-            "mangledName": "$s15deviceintel_ios9BureauAPIC6submit12onCompletionyySb_SSAA0C5ErrorOSgtcSg_tF",
+            "usr": "s:15deviceintel_ios9BureauAPIC6submit12onCompletionyySb_SSAA0C5ErrorOSgAA8InsightsVSgtcSg_tF",
+            "mangledName": "$s15deviceintel_ios9BureauAPIC6submit12onCompletionyySb_SSAA0C5ErrorOSgAA8InsightsVSgtcSg_tF",
             "moduleName": "deviceintel_ios",
             "declAttributes": [
               "AccessControl"
@@ -2085,7 +2099,7 @@
           {
             "kind": "Function",
             "name": "onFinished",
-            "printedName": "onFinished(eventID:data:)",
+            "printedName": "onFinished(eventID:data:insights:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2132,11 +2146,25 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "deviceintel_ios.Insights?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Insights",
+                    "printedName": "deviceintel_ios.Insights",
+                    "usr": "s:15deviceintel_ios8InsightsV"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15deviceintel_ios24PrismFingerPrintDelegateP10onFinished7eventID4dataySSSg_SDySSypGSgtF",
-            "mangledName": "$s15deviceintel_ios24PrismFingerPrintDelegateP10onFinished7eventID4dataySSSg_SDySSypGSgtF",
+            "usr": "s:15deviceintel_ios24PrismFingerPrintDelegateP10onFinished7eventID4data8insightsySSSg_SDySSypGSgAA8InsightsVSgtF",
+            "mangledName": "$s15deviceintel_ios24PrismFingerPrintDelegateP10onFinished7eventID4data8insightsySSSg_SDySSypGSgAA8InsightsVSgtF",
             "moduleName": "deviceintel_ios",
             "genericSig": "<τ_0_0 where τ_0_0 : deviceintel_ios.PrismFingerPrintDelegate>",
             "sugared_genericSig": "<Self where Self : deviceintel_ios.PrismFingerPrintDelegate>",
@@ -3966,6 +3994,20 @@
         "declAttributes": [
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "CommonCrypto",
+        "printedName": "CommonCrypto",
+        "declKind": "Import",
+        "moduleName": "deviceintel_ios"
+      },
+      {
+        "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "deviceintel_ios"
       },
       {
         "kind": "Import",
@@ -7939,6 +7981,2924 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "Insights",
+        "printedName": "Insights",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "networkInformation",
+            "printedName": "networkInformation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "deviceintel_ios.NetworkInformation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NetworkInformation",
+                    "printedName": "deviceintel_ios.NetworkInformation",
+                    "usr": "s:15deviceintel_ios18NetworkInformationV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV18networkInformationAA07NetworkE0VSgvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV18networkInformationAA07NetworkE0VSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "deviceintel_ios.NetworkInformation?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NetworkInformation",
+                        "printedName": "deviceintel_ios.NetworkInformation",
+                        "usr": "s:15deviceintel_ios18NetworkInformationV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV18networkInformationAA07NetworkE0VSgvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV18networkInformationAA07NetworkE0VSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "gpsLocation",
+            "printedName": "gpsLocation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "deviceintel_ios.LocationModel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationModel",
+                    "printedName": "deviceintel_ios.LocationModel",
+                    "usr": "s:15deviceintel_ios13LocationModelV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV11gpsLocationAA0E5ModelVSgvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV11gpsLocationAA0E5ModelVSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "deviceintel_ios.LocationModel?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocationModel",
+                        "printedName": "deviceintel_ios.LocationModel",
+                        "usr": "s:15deviceintel_ios13LocationModelV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV11gpsLocationAA0E5ModelVSgvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV11gpsLocationAA0E5ModelVSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "ip",
+            "printedName": "ip",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV2ipSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV2ipSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV2ipSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV2ipSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "ipType",
+            "printedName": "ipType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV6ipTypeSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV6ipTypeSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV6ipTypeSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV6ipTypeSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "ipLocation",
+            "printedName": "ipLocation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "deviceintel_ios.LocationModel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LocationModel",
+                    "printedName": "deviceintel_ios.LocationModel",
+                    "usr": "s:15deviceintel_ios13LocationModelV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV10ipLocationAA0E5ModelVSgvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV10ipLocationAA0E5ModelVSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "deviceintel_ios.LocationModel?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LocationModel",
+                        "printedName": "deviceintel_ios.LocationModel",
+                        "usr": "s:15deviceintel_ios13LocationModelV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV10ipLocationAA0E5ModelVSgvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV10ipLocationAA0E5ModelVSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "ipSecurity",
+            "printedName": "ipSecurity",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "deviceintel_ios.IPSecurity?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IPSecurity",
+                    "printedName": "deviceintel_ios.IPSecurity",
+                    "usr": "s:15deviceintel_ios10IPSecurityV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV10ipSecurityAA10IPSecurityVSgvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV10ipSecurityAA10IPSecurityVSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "deviceintel_ios.IPSecurity?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IPSecurity",
+                        "printedName": "deviceintel_ios.IPSecurity",
+                        "usr": "s:15deviceintel_ios10IPSecurityV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV10ipSecurityAA10IPSecurityVSgvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV10ipSecurityAA10IPSecurityVSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "os",
+            "printedName": "os",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV2osSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV2osSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV2osSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV2osSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "debuggable",
+            "printedName": "debuggable",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV10debuggableSbvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV10debuggableSbvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV10debuggableSbvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV10debuggableSbvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emulator",
+            "printedName": "emulator",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV8emulatorSbvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV8emulatorSbvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV8emulatorSbvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV8emulatorSbvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fingerprint",
+            "printedName": "fingerprint",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV11fingerprintSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV11fingerprintSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV11fingerprintSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV11fingerprintSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "firstSeenDays",
+            "printedName": "firstSeenDays",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV13firstSeenDaysSivp",
+            "mangledName": "$s15deviceintel_ios8InsightsV13firstSeenDaysSivp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV13firstSeenDaysSivg",
+                "mangledName": "$s15deviceintel_ios8InsightsV13firstSeenDaysSivg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "mockgps",
+            "printedName": "mockgps",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV7mockgpsSbvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV7mockgpsSbvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV7mockgpsSbvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV7mockgpsSbvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "model",
+            "printedName": "model",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV5modelSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV5modelSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV5modelSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV5modelSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "package",
+            "printedName": "package",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV7packageSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV7packageSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV7packageSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV7packageSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "jailbreak",
+            "printedName": "jailbreak",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV9jailbreakSbSgvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV9jailbreakSbSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV9jailbreakSbSgvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV9jailbreakSbSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "userId",
+            "printedName": "userId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV6userIdSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV6userIdSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV6userIdSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV6userIdSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "remoteDesktop",
+            "printedName": "remoteDesktop",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV13remoteDesktopSbvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV13remoteDesktopSbvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV13remoteDesktopSbvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV13remoteDesktopSbvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sessionId",
+            "printedName": "sessionId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV9sessionIdSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV9sessionIdSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV9sessionIdSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV9sessionIdSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "createdAt",
+            "printedName": "createdAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV9createdAts5Int64Vvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV9createdAts5Int64Vvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV9createdAts5Int64Vvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV9createdAts5Int64Vvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "confidenceScore",
+            "printedName": "confidenceScore",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV15confidenceScoreSdSgvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV15confidenceScoreSdSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV15confidenceScoreSdSgvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV15confidenceScoreSdSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "voiceCallDetected",
+            "printedName": "voiceCallDetected",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV17voiceCallDetectedSbSgvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV17voiceCallDetectedSbSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV17voiceCallDetectedSbSgvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV17voiceCallDetectedSbSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "riskScore",
+            "printedName": "riskScore",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV9riskScoreSivp",
+            "mangledName": "$s15deviceintel_ios8InsightsV9riskScoreSivp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV9riskScoreSivg",
+                "mangledName": "$s15deviceintel_ios8InsightsV9riskScoreSivg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "riskLevel",
+            "printedName": "riskLevel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV9riskLevelSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV9riskLevelSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV9riskLevelSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV9riskLevelSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "riskCauses",
+            "printedName": "riskCauses",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV10riskCausesSaySSGvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV10riskCausesSaySSGvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV10riskCausesSaySSGvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV10riskCausesSaySSGvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "developerMode",
+            "printedName": "developerMode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV13developerModeSbvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV13developerModeSbvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV13developerModeSbvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV13developerModeSbvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "appStoreInstall",
+            "printedName": "appStoreInstall",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV15appStoreInstallSbvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV15appStoreInstallSbvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV15appStoreInstallSbvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV15appStoreInstallSbvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fridaDetected",
+            "printedName": "fridaDetected",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV13fridaDetectedSbvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV13fridaDetectedSbvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV13fridaDetectedSbvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV13fridaDetectedSbvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accessibilityEnabled",
+            "printedName": "accessibilityEnabled",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV20accessibilityEnabledSbvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV20accessibilityEnabledSbvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV20accessibilityEnabledSbvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV20accessibilityEnabledSbvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "factoryResetRisk",
+            "printedName": "factoryResetRisk",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV16factoryResetRiskSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV16factoryResetRiskSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV16factoryResetRiskSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV16factoryResetRiskSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "factoryResetTime",
+            "printedName": "factoryResetTime",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int64?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV16factoryResetTimes5Int64VSgvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV16factoryResetTimes5Int64VSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int64?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int64",
+                        "printedName": "Swift.Int64",
+                        "usr": "s:s5Int64V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV16factoryResetTimes5Int64VSgvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV16factoryResetTimes5Int64VSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "behaviouralRiskLevel",
+            "printedName": "behaviouralRiskLevel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV20behaviouralRiskLevelSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV20behaviouralRiskLevelSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV20behaviouralRiskLevelSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV20behaviouralRiskLevelSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "deviceRiskScore",
+            "printedName": "deviceRiskScore",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV15deviceRiskScoreSivp",
+            "mangledName": "$s15deviceintel_ios8InsightsV15deviceRiskScoreSivp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV15deviceRiskScoreSivg",
+                "mangledName": "$s15deviceintel_ios8InsightsV15deviceRiskScoreSivg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "deviceRiskLevel",
+            "printedName": "deviceRiskLevel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV15deviceRiskLevelSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV15deviceRiskLevelSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV15deviceRiskLevelSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV15deviceRiskLevelSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "merchantId",
+            "printedName": "merchantId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV10merchantIdSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV10merchantIdSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV10merchantIdSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV10merchantIdSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "requestId",
+            "printedName": "requestId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV9requestIdSSvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV9requestIdSSvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV9requestIdSSvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV9requestIdSSvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "timestamp",
+            "printedName": "timestamp",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int64?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV9timestamps5Int64VSgvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV9timestamps5Int64VSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int64?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int64",
+                        "printedName": "Swift.Int64",
+                        "usr": "s:s5Int64V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV9timestamps5Int64VSgvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV9timestamps5Int64VSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "statusCode",
+            "printedName": "statusCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios8InsightsV10statusCodeSiSgvp",
+            "mangledName": "$s15deviceintel_ios8InsightsV10statusCodeSiSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios8InsightsV10statusCodeSiSgvg",
+                "mangledName": "$s15deviceintel_ios8InsightsV10statusCodeSiSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Insights",
+                "printedName": "deviceintel_ios.Insights",
+                "usr": "s:15deviceintel_ios8InsightsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15deviceintel_ios8InsightsV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15deviceintel_ios8InsightsV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "deviceintel_ios",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15deviceintel_ios8InsightsV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15deviceintel_ios8InsightsV6encode2toys7Encoder_p_tKF",
+            "moduleName": "deviceintel_ios",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15deviceintel_ios8InsightsV",
+        "mangledName": "$s15deviceintel_ios8InsightsV",
+        "moduleName": "deviceintel_ios",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "NetworkInformation",
+        "printedName": "NetworkInformation",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isp",
+            "printedName": "isp",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios18NetworkInformationV3ispSSSgvp",
+            "mangledName": "$s15deviceintel_ios18NetworkInformationV3ispSSSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios18NetworkInformationV3ispSSSgvg",
+                "mangledName": "$s15deviceintel_ios18NetworkInformationV3ispSSSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "ipType",
+            "printedName": "ipType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios18NetworkInformationV6ipTypeSSSgvp",
+            "mangledName": "$s15deviceintel_ios18NetworkInformationV6ipTypeSSSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios18NetworkInformationV6ipTypeSSSgvg",
+                "mangledName": "$s15deviceintel_ios18NetworkInformationV6ipTypeSSSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NetworkInformation",
+                "printedName": "deviceintel_ios.NetworkInformation",
+                "usr": "s:15deviceintel_ios18NetworkInformationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15deviceintel_ios18NetworkInformationV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15deviceintel_ios18NetworkInformationV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "deviceintel_ios",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15deviceintel_ios18NetworkInformationV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15deviceintel_ios18NetworkInformationV6encode2toys7Encoder_p_tKF",
+            "moduleName": "deviceintel_ios",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15deviceintel_ios18NetworkInformationV",
+        "mangledName": "$s15deviceintel_ios18NetworkInformationV",
+        "moduleName": "deviceintel_ios",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LocationModel",
+        "printedName": "LocationModel",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "city",
+            "printedName": "city",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios13LocationModelV4citySSSgvp",
+            "mangledName": "$s15deviceintel_ios13LocationModelV4citySSSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios13LocationModelV4citySSSgvg",
+                "mangledName": "$s15deviceintel_ios13LocationModelV4citySSSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "country",
+            "printedName": "country",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios13LocationModelV7countrySSSgvp",
+            "mangledName": "$s15deviceintel_ios13LocationModelV7countrySSSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios13LocationModelV7countrySSSgvg",
+                "mangledName": "$s15deviceintel_ios13LocationModelV7countrySSSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "latitude",
+            "printedName": "latitude",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios13LocationModelV8latitudeSdSgvp",
+            "mangledName": "$s15deviceintel_ios13LocationModelV8latitudeSdSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios13LocationModelV8latitudeSdSgvg",
+                "mangledName": "$s15deviceintel_ios13LocationModelV8latitudeSdSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "longitude",
+            "printedName": "longitude",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios13LocationModelV9longitudeSdSgvp",
+            "mangledName": "$s15deviceintel_ios13LocationModelV9longitudeSdSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios13LocationModelV9longitudeSdSgvg",
+                "mangledName": "$s15deviceintel_ios13LocationModelV9longitudeSdSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "region",
+            "printedName": "region",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios13LocationModelV6regionSSSgvp",
+            "mangledName": "$s15deviceintel_ios13LocationModelV6regionSSSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios13LocationModelV6regionSSSgvg",
+                "mangledName": "$s15deviceintel_ios13LocationModelV6regionSSSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LocationModel",
+                "printedName": "deviceintel_ios.LocationModel",
+                "usr": "s:15deviceintel_ios13LocationModelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15deviceintel_ios13LocationModelV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15deviceintel_ios13LocationModelV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "deviceintel_ios",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15deviceintel_ios13LocationModelV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15deviceintel_ios13LocationModelV6encode2toys7Encoder_p_tKF",
+            "moduleName": "deviceintel_ios",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15deviceintel_ios13LocationModelV",
+        "mangledName": "$s15deviceintel_ios13LocationModelV",
+        "moduleName": "deviceintel_ios",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IPSecurity",
+        "printedName": "IPSecurity",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isCrawler",
+            "printedName": "isCrawler",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios10IPSecurityV9isCrawlerSbSgvp",
+            "mangledName": "$s15deviceintel_ios10IPSecurityV9isCrawlerSbSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios10IPSecurityV9isCrawlerSbSgvg",
+                "mangledName": "$s15deviceintel_ios10IPSecurityV9isCrawlerSbSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isProxy",
+            "printedName": "isProxy",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios10IPSecurityV7isProxySbSgvp",
+            "mangledName": "$s15deviceintel_ios10IPSecurityV7isProxySbSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios10IPSecurityV7isProxySbSgvg",
+                "mangledName": "$s15deviceintel_ios10IPSecurityV7isProxySbSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isTor",
+            "printedName": "isTor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios10IPSecurityV5isTorSbSgvp",
+            "mangledName": "$s15deviceintel_ios10IPSecurityV5isTorSbSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios10IPSecurityV5isTorSbSgvg",
+                "mangledName": "$s15deviceintel_ios10IPSecurityV5isTorSbSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "threatLevel",
+            "printedName": "threatLevel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios10IPSecurityV11threatLevelSSSgvp",
+            "mangledName": "$s15deviceintel_ios10IPSecurityV11threatLevelSSSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios10IPSecurityV11threatLevelSSSgvg",
+                "mangledName": "$s15deviceintel_ios10IPSecurityV11threatLevelSSSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "vpn",
+            "printedName": "vpn",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15deviceintel_ios10IPSecurityV3vpnSbSgvp",
+            "mangledName": "$s15deviceintel_ios10IPSecurityV3vpnSbSgvp",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15deviceintel_ios10IPSecurityV3vpnSbSgvg",
+                "mangledName": "$s15deviceintel_ios10IPSecurityV3vpnSbSgvg",
+                "moduleName": "deviceintel_ios",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IPSecurity",
+                "printedName": "deviceintel_ios.IPSecurity",
+                "usr": "s:15deviceintel_ios10IPSecurityV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15deviceintel_ios10IPSecurityV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s15deviceintel_ios10IPSecurityV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "deviceintel_ios",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15deviceintel_ios10IPSecurityV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s15deviceintel_ios10IPSecurityV6encode2toys7Encoder_p_tKF",
+            "moduleName": "deviceintel_ios",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15deviceintel_ios10IPSecurityV",
+        "mangledName": "$s15deviceintel_ios10IPSecurityV",
+        "moduleName": "deviceintel_ios",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "deviceintel_ios",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
@@ -10178,77 +13138,77 @@
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 758,
+      "offset": 781,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 784,
+      "offset": 807,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 907,
+      "offset": 930,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 942,
+      "offset": 965,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "FloatLiteral",
-      "offset": 1351,
+      "offset": 1374,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1567,
+      "offset": 1590,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1614,
+      "offset": 1637,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1722,
+      "offset": 1745,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 1781,
+      "offset": 1804,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 24403,
+      "offset": 25563,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 24904,
+      "offset": 26064,
       "length": 1,
       "value": "5"
     },
@@ -10507,21 +13467,21 @@
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Encryption.swift",
       "kind": "IntegerLiteral",
-      "offset": 7542,
+      "offset": 5219,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Encryption.swift",
       "kind": "IntegerLiteral",
-      "offset": 7547,
+      "offset": 5224,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Encryption.swift",
       "kind": "Array",
-      "offset": 7613,
+      "offset": 5290,
       "length": 2,
       "value": "[]"
     },
@@ -10572,7 +13532,7 @@
       "kind": "StringLiteral",
       "offset": 702,
       "length": 7,
-      "value": "\"2.0.3\""
+      "value": "\"2.0.4\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
@@ -10944,6 +13904,55 @@
       "offset": 893,
       "length": 1,
       "value": "0"
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Model\/Insights.swift",
+      "kind": "StringLiteral",
+      "offset": 1599,
+      "length": 13,
+      "value": "\"GPSLocation\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Model\/Insights.swift",
+      "kind": "StringLiteral",
+      "offset": 1631,
+      "length": 4,
+      "value": "\"IP\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Model\/Insights.swift",
+      "kind": "StringLiteral",
+      "offset": 1658,
+      "length": 8,
+      "value": "\"IPType\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Model\/Insights.swift",
+      "kind": "StringLiteral",
+      "offset": 1693,
+      "length": 12,
+      "value": "\"IPLocation\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Model\/Insights.swift",
+      "kind": "StringLiteral",
+      "offset": 1732,
+      "length": 12,
+      "value": "\"IPSecurity\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Model\/Insights.swift",
+      "kind": "StringLiteral",
+      "offset": 1763,
+      "length": 4,
+      "value": "\"OS\""
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Model\/Insights.swift",
+      "kind": "StringLiteral",
+      "offset": 3303,
+      "length": 5,
+      "value": "\"VPN\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/FingerprintJS\/Harvesters\/IdentifierHarvester.swift",

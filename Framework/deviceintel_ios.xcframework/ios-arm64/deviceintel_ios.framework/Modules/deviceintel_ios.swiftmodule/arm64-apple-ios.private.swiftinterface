@@ -54,7 +54,7 @@ extension deviceintel_ios.DeviceInfoProvider : deviceintel_ios.DeviceInfoProvidi
   public func getDeviceInfo() async -> deviceintel_ios.DeviceInfo
   public func getDeviceInfo(_ completion: @escaping (deviceintel_ios.DeviceInfo) -> Swift.Void)
 }
-public typealias CompletionBlock = (_ result: Swift.Bool, _ eventID: Swift.String, _ error: deviceintel_ios.BureauError?) -> Swift.Void
+public typealias CompletionBlock = (_ result: Swift.Bool, _ eventID: Swift.String, _ error: deviceintel_ios.BureauError?, _ insights: deviceintel_ios.Insights?) -> Swift.Void
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class BureauAPI : ObjectiveC.NSObject {
   public var delegate: UIKit.UIViewController?
   public var fingerprintDelegate: (any deviceintel_ios.PrismFingerPrintDelegate)?
@@ -85,7 +85,7 @@ public enum Environment {
   }
 }
 public protocol PrismFingerPrintDelegate : ObjectiveC.NSObject {
-  func onFinished(eventID: Swift.String?, data: [Swift.String : Any]?)
+  func onFinished(eventID: Swift.String?, data: [Swift.String : Any]?, insights: deviceintel_ios.Insights?)
 }
 public protocol LocalSignalDelegate : AnyObject {
   func deviceLocation(isMocked: Swift.Bool)
@@ -285,6 +285,71 @@ extension CoreFoundation.CGSize : Swift.CustomStringConvertible {
   public var description: Swift.String {
     get
   }
+}
+public struct Insights : Swift.Codable {
+  public let networkInformation: deviceintel_ios.NetworkInformation?
+  public let gpsLocation: deviceintel_ios.LocationModel?
+  public let ip: Swift.String
+  public let ipType: Swift.String
+  public let ipLocation: deviceintel_ios.LocationModel?
+  public let ipSecurity: deviceintel_ios.IPSecurity?
+  public let os: Swift.String
+  public let debuggable: Swift.Bool
+  public let emulator: Swift.Bool
+  public let fingerprint: Swift.String
+  public let firstSeenDays: Swift.Int
+  public let mockgps: Swift.Bool
+  public let model: Swift.String
+  public let package: Swift.String
+  public let jailbreak: Swift.Bool?
+  public let userId: Swift.String
+  public let remoteDesktop: Swift.Bool
+  public let sessionId: Swift.String
+  public let createdAt: Swift.Int64
+  public let confidenceScore: Swift.Double?
+  public let voiceCallDetected: Swift.Bool?
+  public let riskScore: Swift.Int
+  public let riskLevel: Swift.String
+  public let riskCauses: [Swift.String]
+  public let developerMode: Swift.Bool
+  public let appStoreInstall: Swift.Bool
+  public let fridaDetected: Swift.Bool
+  public let accessibilityEnabled: Swift.Bool
+  public let factoryResetRisk: Swift.String
+  public let factoryResetTime: Swift.Int64?
+  public let behaviouralRiskLevel: Swift.String
+  public let deviceRiskScore: Swift.Int
+  public let deviceRiskLevel: Swift.String
+  public let merchantId: Swift.String
+  public let requestId: Swift.String
+  public let timestamp: Swift.Int64?
+  public let statusCode: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct NetworkInformation : Swift.Codable {
+  public let isp: Swift.String?
+  public let ipType: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LocationModel : Swift.Codable {
+  public let city: Swift.String?
+  public let country: Swift.String?
+  public let latitude: Swift.Double?
+  public let longitude: Swift.Double?
+  public let region: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct IPSecurity : Swift.Codable {
+  public let isCrawler: Swift.Bool?
+  public let isProxy: Swift.Bool?
+  public let isTor: Swift.Bool?
+  public let threatLevel: Swift.String?
+  public let vpn: Swift.Bool?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct BureauConfig {
   public init(credentialID: Swift.String, environment: deviceintel_ios.Environment, enableBehavioralBiometrics: Swift.Bool = false, userId: Swift.String = "", flow: Swift.String = "", enableDebugLog: Swift.Bool = false)
