@@ -113,6 +113,7 @@ extension deviceintel_ios.BureauAPI {
   public func setLocalRiskSignalMonitoringFrequesncy(interval: Foundation.TimeInterval = 5)
   public func startMonitoringRiskSignals()
   public func setLocalRiskSignalMonitoringFrequesncy(sec: Foundation.TimeInterval)
+  public func isFeatureEnabled(_ key: Swift.String) -> Swift.Bool
 }
 extension deviceintel_ios.BureauAPI {
   public func isSDKInitializationSuccess() -> Swift.Bool
@@ -307,6 +308,7 @@ public struct Insights : Swift.Codable {
   public let sessionId: Swift.String
   public let createdAt: Swift.Int64
   public let confidenceScore: Swift.Double?
+  public let interEventGPSVelocity: Swift.Double?
   public let voiceCallDetected: Swift.Bool?
   public let riskScore: Swift.Int
   public let riskLevel: Swift.String
@@ -324,6 +326,8 @@ public struct Insights : Swift.Codable {
   public let requestId: Swift.String
   public let timestamp: Swift.Int64?
   public let statusCode: Swift.Int?
+  public let deviceTrustScore: Swift.Int?
+  public let mitmAttackDetected: Swift.Bool?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
