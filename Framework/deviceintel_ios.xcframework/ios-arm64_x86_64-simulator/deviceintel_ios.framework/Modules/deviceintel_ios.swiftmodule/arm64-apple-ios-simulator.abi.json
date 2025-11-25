@@ -697,16 +697,6 @@
         "moduleName": "deviceintel_ios"
       },
       {
-        "kind": "Import",
-        "name": "Sentry",
-        "printedName": "Sentry",
-        "declKind": "Import",
-        "moduleName": "deviceintel_ios",
-        "declAttributes": [
-          "AccessControl"
-        ]
-      },
-      {
         "kind": "TypeDecl",
         "name": "BureauAPI",
         "printedName": "BureauAPI",
@@ -3934,20 +3924,13 @@
       },
       {
         "kind": "Import",
-        "name": "Sentry",
-        "printedName": "Sentry",
-        "declKind": "Import",
-        "moduleName": "deviceintel_ios",
-        "declAttributes": [
-          "AccessControl"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "CoreTelephony",
         "printedName": "CoreTelephony",
         "declKind": "Import",
-        "moduleName": "deviceintel_ios"
+        "moduleName": "deviceintel_ios",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -13377,77 +13360,77 @@
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 765,
+      "offset": 767,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 791,
+      "offset": 793,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 914,
+      "offset": 916,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 949,
+      "offset": 951,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "FloatLiteral",
-      "offset": 1358,
+      "offset": 1360,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1574,
+      "offset": 1576,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1621,
+      "offset": 1623,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1729,
+      "offset": 1731,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 1788,
+      "offset": 1790,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 25552,
+      "offset": 25572,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 26053,
+      "offset": 26073,
       "length": 1,
       "value": "5"
     },
@@ -13785,7 +13768,7 @@
       "kind": "StringLiteral",
       "offset": 427,
       "length": 7,
-      "value": "\"2.0.6\""
+      "value": "\"2.0.7\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
