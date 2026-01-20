@@ -1410,6 +1410,46 @@
           },
           {
             "kind": "Function",
+            "name": "setMetaInfo",
+            "printedName": "setMetaInfo(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15deviceintel_ios9BureauAPIC11setMetaInfoyySDyS2SGF",
+            "mangledName": "$s15deviceintel_ios9BureauAPIC11setMetaInfoyySDyS2SGF",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getBehaviouralAnalytics",
             "printedName": "getBehaviouralAnalytics(_:_:attributes:)",
             "children": [
@@ -7352,6 +7392,359 @@
           "AccessControl"
         ],
         "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "deviceintel_ios",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "zlib",
+        "printedName": "zlib",
+        "declKind": "Import",
+        "moduleName": "deviceintel_ios"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "GzipCompressor",
+        "printedName": "GzipCompressor",
+        "children": [
+          {
+            "kind": "TypeDecl",
+            "name": "Error",
+            "printedName": "Error",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "deflateInitFailed",
+                "printedName": "deflateInitFailed",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(deviceintel_ios.GzipCompressor.Error.Type) -> (Swift.Int32) -> deviceintel_ios.GzipCompressor.Error",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.Int32) -> deviceintel_ios.GzipCompressor.Error",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "deviceintel_ios.GzipCompressor.Error",
+                            "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Tuple",
+                            "printedName": "(code: Swift.Int32)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int32",
+                                "printedName": "Swift.Int32",
+                                "usr": "s:s5Int32V"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "deviceintel_ios.GzipCompressor.Error.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "deviceintel_ios.GzipCompressor.Error",
+                            "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO17deflateInitFailedyAEs5Int32V_tcAEmF",
+                "mangledName": "$s15deviceintel_ios14GzipCompressorV5ErrorO17deflateInitFailedyAEs5Int32V_tcAEmF",
+                "moduleName": "deviceintel_ios"
+              },
+              {
+                "kind": "Var",
+                "name": "deflateFailed",
+                "printedName": "deflateFailed",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(deviceintel_ios.GzipCompressor.Error.Type) -> (Swift.Int32) -> deviceintel_ios.GzipCompressor.Error",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.Int32) -> deviceintel_ios.GzipCompressor.Error",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "deviceintel_ios.GzipCompressor.Error",
+                            "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Tuple",
+                            "printedName": "(code: Swift.Int32)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int32",
+                                "printedName": "Swift.Int32",
+                                "usr": "s:s5Int32V"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "deviceintel_ios.GzipCompressor.Error.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "deviceintel_ios.GzipCompressor.Error",
+                            "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO13deflateFailedyAEs5Int32V_tcAEmF",
+                "mangledName": "$s15deviceintel_ios14GzipCompressorV5ErrorO13deflateFailedyAEs5Int32V_tcAEmF",
+                "moduleName": "deviceintel_ios"
+              },
+              {
+                "kind": "Var",
+                "name": "fileReadFailed",
+                "printedName": "fileReadFailed",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(deviceintel_ios.GzipCompressor.Error.Type) -> deviceintel_ios.GzipCompressor.Error",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "deviceintel_ios.GzipCompressor.Error",
+                        "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "deviceintel_ios.GzipCompressor.Error.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "deviceintel_ios.GzipCompressor.Error",
+                            "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO14fileReadFailedyA2EmF",
+                "mangledName": "$s15deviceintel_ios14GzipCompressorV5ErrorO14fileReadFailedyA2EmF",
+                "moduleName": "deviceintel_ios"
+              },
+              {
+                "kind": "Var",
+                "name": "fileWriteFailed",
+                "printedName": "fileWriteFailed",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(deviceintel_ios.GzipCompressor.Error.Type) -> deviceintel_ios.GzipCompressor.Error",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "deviceintel_ios.GzipCompressor.Error",
+                        "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "deviceintel_ios.GzipCompressor.Error.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "deviceintel_ios.GzipCompressor.Error",
+                            "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO15fileWriteFailedyA2EmF",
+                "mangledName": "$s15deviceintel_ios14GzipCompressorV5ErrorO15fileWriteFailedyA2EmF",
+                "moduleName": "deviceintel_ios"
+              },
+              {
+                "kind": "Var",
+                "name": "invalidInput",
+                "printedName": "invalidInput",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(deviceintel_ios.GzipCompressor.Error.Type) -> deviceintel_ios.GzipCompressor.Error",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "deviceintel_ios.GzipCompressor.Error",
+                        "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "deviceintel_ios.GzipCompressor.Error.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "deviceintel_ios.GzipCompressor.Error",
+                            "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO12invalidInputyA2EmF",
+                "mangledName": "$s15deviceintel_ios14GzipCompressorV5ErrorO12invalidInputyA2EmF",
+                "moduleName": "deviceintel_ios"
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:15deviceintel_ios14GzipCompressorV5ErrorO",
+            "mangledName": "$s15deviceintel_ios14GzipCompressorV5ErrorO",
+            "moduleName": "deviceintel_ios",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Error",
+                "printedName": "Error",
+                "usr": "s:s5ErrorP",
+                "mangledName": "$ss5ErrorP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "compress",
+            "printedName": "compress(data:level:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "hasDefaultArg": true,
+                "usr": "s:s5Int32V"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15deviceintel_ios14GzipCompressorV8compress4data5level10Foundation4DataVAI_s5Int32VtKFZ",
+            "mangledName": "$s15deviceintel_ios14GzipCompressorV8compress4data5level10Foundation4DataVAI_s5Int32VtKFZ",
+            "moduleName": "deviceintel_ios",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:15deviceintel_ios14GzipCompressorV",
+        "mangledName": "$s15deviceintel_ios14GzipCompressorV",
+        "moduleName": "deviceintel_ios",
+        "declAttributes": [
+          "AccessControl"
+        ],
         "conformances": [
           {
             "kind": "Conformance",
@@ -13380,57 +13773,57 @@
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
+      "kind": "Dictionary",
+      "offset": 974,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "StringLiteral",
-      "offset": 951,
+      "offset": 1011,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "FloatLiteral",
-      "offset": 1360,
+      "offset": 1420,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1576,
+      "offset": 1636,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1623,
+      "offset": 1683,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "BooleanLiteral",
-      "offset": 1731,
+      "offset": 1791,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 1790,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
-      "kind": "IntegerLiteral",
-      "offset": 25572,
+      "offset": 26468,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/BureauAPI.swift",
       "kind": "IntegerLiteral",
-      "offset": 26073,
+      "offset": 26969,
       "length": 1,
       "value": "5"
     },
@@ -13724,21 +14117,21 @@
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Encryption.swift",
       "kind": "IntegerLiteral",
-      "offset": 5219,
+      "offset": 6416,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Encryption.swift",
       "kind": "IntegerLiteral",
-      "offset": 5224,
+      "offset": 6421,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/Encryption.swift",
       "kind": "Array",
-      "offset": 5290,
+      "offset": 6487,
       "length": 2,
       "value": "[]"
     },
@@ -13768,7 +14161,7 @@
       "kind": "StringLiteral",
       "offset": 427,
       "length": 7,
-      "value": "\"2.0.7\""
+      "value": "\"2.0.8\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/bureau_git\/fingerprint-ios\/deviceintel-ios\/AppConstant.swift",
