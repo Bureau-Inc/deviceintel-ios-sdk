@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name deviceintel_ios
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import AVFoundation
 import AdSupport
 import AppTrackingTransparency
@@ -66,16 +66,12 @@ public typealias CompletionBlock = (_ result: Swift.Bool, _ eventID: Swift.Strin
   public func setCustomUrl(_ customUrl: Swift.String)
   public func setFlow(_ flow: Swift.String)
   public func setMetaInfo(_ metaInfo: [Swift.String : Swift.String])
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getBehaviouralAnalytics(_ duration: Swift.Int, _ userId: Swift.String, attributes: [Swift.String : Any]? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func submit(onCompletion: deviceintel_ios.CompletionBlock? = nil)
-  #endif
   @objc deinit
 }
 extension deviceintel_ios.BureauAPI : CoreLocation.CLLocationManagerDelegate {
-  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [_LocationEssentials.CLLocation])
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
 }
 public struct CredentialBuilder {
 }
@@ -89,9 +85,7 @@ public enum Environment {
   }
 }
 public protocol PrismFingerPrintDelegate : ObjectiveC.NSObject {
-  #if compiler(>=5.3) && $NonescapableTypes
   func onFinished(eventID: Swift.String?, data: [Swift.String : Any]?, insights: deviceintel_ios.Insights?)
-  #endif
 }
 public protocol LocalSignalDelegate : AnyObject {
   func deviceLocation(isMocked: Swift.Bool)
@@ -174,23 +168,15 @@ public protocol FingerprintFunction {
   @objc deinit
 }
 extension deviceintel_ios.Fingerprinter {
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getDeviceId(_ completion: @escaping (Swift.String?) -> Swift.Void)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getFingerprint(_ completion: @escaping (Swift.String?) -> Swift.Void)
-  #endif
   public func getFingerprintTree(_ completion: @escaping (deviceintel_ios.FingerprintTree) -> Swift.Void)
 }
 @available(iOS 13.0, tvOS 13.0, *)
 extension deviceintel_ios.Fingerprinter {
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getDeviceId() async -> Swift.String?
-  #endif
   public func getFingerprintTree() async -> deviceintel_ios.FingerprintTree
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getFingerprint() async -> Swift.String?
-  #endif
 }
 public protocol FingerprinterInstanceProviding {
   static func getInstance(_ configuration: deviceintel_ios.Configuration) -> deviceintel_ios.Fingerprinter
@@ -245,9 +231,7 @@ public protocol BehavioralBiometricsHelper {
     case info
     case warning
     case error
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
-    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -265,11 +249,9 @@ public enum BureauError : Swift.Error {
   case unknown(statusCode: Swift.Int)
 }
 extension deviceintel_ios.BureauError : Foundation.LocalizedError {
-  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
-  #endif
 }
 public struct FingerprintTree {
   public let info: deviceintel_ios.DeviceInfoItem
