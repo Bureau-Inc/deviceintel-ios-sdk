@@ -14147,7 +14147,7 @@
       "kind": "StringLiteral",
       "offset": 427,
       "length": 7,
-      "value": "\"2.0.9\""
+      "value": "\"2.1.0\""
     },
     {
       "filePath": "\/Users\/apple\/Documents\/Hari\/ios-device-intelligence-sdk\/deviceintel-ios\/AppConstant.swift",
