@@ -12,9 +12,9 @@ pod 'deviceintel-ios'
 
 2. `import deviceintel_ios` in your UIViewcontroller
 3. `Info.plist` -> Add below properties
-   - “NSUserTrackingUsageDescription”
-   - “NSLocationAlwaysAndWhenInUseUsageDescription”
-   - “Privacy - Location When In Use Usage Description”
+   - "NSUserTrackingUsageDescription"
+   - "NSLocationAlwaysAndWhenInUseUsageDescription"
+   - "Privacy - Location When In Use Usage Description"
 
 ### Step 2 - Initialise SDK
 
@@ -147,3 +147,58 @@ curl --location --request POST 'https://api.bureau.id/v1/suppliers/device-finger
     "sessionId": "<<SessionID/EventID>>"
 }'
 ```
+
+---
+
+## Changelog
+
+### v2.2.0 — Storage Volume Feature
+
+**New fields added to the Device Intelligence payload (`memInfo_`):**
+
+| JSON Key | Type | Description |
+|---|---|---|
+| `totalInternalStorage_` | `Int64` | Total capacity of device internal storage, in bytes |
+| `freeInternalStorage_` | `Int64` | Free (available for important usage) internal storage, in bytes. Uses `volumeAvailableCapacityForImportantUsageKey` on iOS 11+. Returns `-1` on failure. |
+
+**iOS Implementation — `StorageVolumeProvider`:**
+
+The SDK collects storage volume data using Apple's `FileManager` / `URLResourceKey` APIs. No new permissions are required.
+
+```swift
+// Internal implementation (compiled into XCFramework)
+// Uses URL.resourceValues(forKeys:) on the app home directory URL
+
+let url = URL(fileURLWithPath: NSHomeDirectory())
+
+// Total volume
+let totalValues = try url.resourceValues(forKeys: [.volumeTotalCapacityKey])
+let totalBytes = Int64(totalValues.volumeTotalCapacity ?? 0)
+
+// Free volume (iOS 11+)
+if #available(iOS 11.0, *) {
+    let freeValues = try url.resourceValues(
+        forKeys: [.volumeAvailableCapacityForImportantUsageKey]
+    )
+    let freeBytes = freeValues.volumeAvailableCapacityForImportantUsage ?? -1
+}
+```
+
+**Backend payload example (`memInfo_` section):**
+
+```json
+{
+  "memInfo_": {
+    "totalInternalStorage_": 128000000000,
+    "freeInternalStorage_": 45200000000,
+    "totalRAM_": 6442450944
+  }
+}
+```
+
+**Parity with Android:**
+This feature mirrors the Android SDK changes in `DeviceStorageProvider.kt`:
+- `getTotalInternalVolume()` → `totalInternalStorage_`
+- `getFreeInternalVolume()` → `freeInternalStorage_`
+- `getTotalExternalVolume()` → _(iOS has no external storage, field omitted)_
+- `getFreeExternalVolume()` → _(iOS has no external storage, field omitted)_
